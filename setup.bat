@@ -32,5 +32,5 @@ for %%f in ("%~dp0*.appx") do (
 )
 taskkill /F /IM ApplicationFrameHost.exe >nul 2>&1
 :: Done!
-echo Apple Music has been installed!
+echo Apple Devices has been installed!
 pause
