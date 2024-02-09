@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Package IgnorableNamespaces="uap rescap build" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5" xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10" xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10" xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:build="http://schemas.microsoft.com/developer/appx/2015/build" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="AppleInc.AppleDevices" Publisher="CN=5BD5593D-A41B-4F89-884E-B4F3E0FBAA75" Version="1.1028.9986.0" ProcessorArchitecture="x64" />
+  <Properties>
+    <DisplayName>ms-resource:AppDisplayName</DisplayName>
+    <PublisherDisplayName>Apple Inc.</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.0.0" MaxVersionTested="10.0.22621.0" />
+    <PackageDependency Name="Microsoft.VCLibs.140.00.UWPDesktop" MinVersion="14.0.30704.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.VCLibs.140.00" MinVersion="14.0.30704.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="EN-US" />
+    <Resource Language="AR" />
+    <Resource Language="CA" />
+    <Resource Language="CS" />
+    <Resource Language="DA" />
+    <Resource Language="DE" />
+    <Resource Language="EL" />
+    <Resource Language="EN-AU" />
+    <Resource Language="EN-GB" />
+    <Resource Language="ES-419" />
+    <Resource Language="ES" />
+    <Resource Language="FI" />
+    <Resource Language="FR-CA" />
+    <Resource Language="HE" />
+    <Resource Language="HI" />
+    <Resource Language="HR" />
+    <Resource Language="HU" />
+    <Resource Language="ID" />
+    <Resource Language="IT" />
+    <Resource Language="JA" />
+    <Resource Language="KO" />
+    <Resource Language="MS" />
+    <Resource Language="NB-NO" />
+    <Resource Language="NL" />
+    <Resource Language="PL" />
+    <Resource Language="PT-BR" />
+    <Resource Language="PT-PT" />
+    <Resource Language="RO" />
+    <Resource Language="RU" />
+    <Resource Language="SK" />
+    <Resource Language="SV" />
+    <Resource Language="TH" />
+    <Resource Language="TR" />
+    <Resource Language="UK" />
+    <Resource Language="VI" />
+    <Resource Language="ZH-CN" />
+    <Resource Language="ZH-HK" />
+    <Resource Language="ZH-TW" />
+    <Resource Language="FR" />
+    <Resource uap:Scale="100" />
+    <Resource uap:Scale="200" />
+    <Resource uap:Scale="400" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="AppleDevices.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="ms-resource:AppDisplayName" Description="ms-resource:AppDescription" BackgroundColor="transparent" Square150x150Logo="Images\Square150x150Logo.png" Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile ShortName="ms-resource:AppDisplayName" Square71x71Logo="Images\SmallTile.png" Square310x310Logo="Images\LargeTile.png" Wide310x150Logo="Images\Wide310x150Logo.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Images\SplashScreen.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias" Executable="AppleDevices.exe" EntryPoint="Windows.FullTrustApplication">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="AppleDevices.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+    <Application Id="AMPDevicesAgent" Executable="AMPDevicesAgent.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="AMPDevicesAgent" Description="AMPDevicesAgent" BackgroundColor="transparent" Square150x150Logo="Images\Square150x150Logo.png" Square44x44Logo="Images\Square44x44Logo.png" AppListEntry="none" />
+      <Extensions>
+        <com:Extension Category="windows.comServer">
+          <com:ComServer>
+            <com:ExeServer Executable="AMPDevicesAgent.exe" DisplayName="AMPDevicesAgent">
+              <com:Class Id="054AA48D-7681-4C3C-9554-AE093D8798DB" DisplayName="AMP.Devices.IDiscovery" />
+            </com:ExeServer>
+          </com:ComServer>
+        </com:Extension>
+        <uap3:Extension Category="windows.appExecutionAlias" Executable="AMPDevicesAgent.exe" EntryPoint="Windows.FullTrustApplication">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="AMPDevicesAgent.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+        <desktop:Extension Category="windows.startupTask" Executable="AppleMobileDeviceLauncher.exe" EntryPoint="Windows.FullTrustApplication">
+          <desktop:StartupTask TaskId="AppleInc.AppleDevices.AppleMobileDeviceLauncher" Enabled="true" DisplayName="ms-resource:Resources/StartupTask_AppleMobileDeviceProcess" />
+        </desktop:Extension>
+      </Extensions>
+    </Application>
+    <Application Id="AppleInc.Devices.Defaults" Executable="defaults.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="Defaults" Description="Defaults" BackgroundColor="#FFFFFF" Square150x150Logo="Images\Square150x150Logo.png" Square44x44Logo="Images\Square44x44Logo.png" AppListEntry="none" />
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="AppleInc.Devices.Defaults.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+        <desktop:Extension Category="windows.fullTrustProcess" Executable="defaults.exe">
+          <desktop:FullTrustProcess />
+        </desktop:Extension>
+      </Extensions>
+    </Application>
+    <Application Id="mobdev" Executable="mobdev.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="mobdev" Description="mobdev" BackgroundColor="#FFFFFF" Square150x150Logo="Images\Square150x150Logo.png" Square44x44Logo="Images\Square44x44Logo.png" AppListEntry="none" />
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="mobdev.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+        <desktop:Extension Category="windows.fullTrustProcess" Executable="mobdev.exe">
+          <desktop:FullTrustProcess />
+        </desktop:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <rescap:Capability Name="runFullTrust" />
+    <rescap:Capability Name="allowElevation" />
+  </Capabilities>
+  <Extensions>
+    <desktop2:Extension Category="windows.firewallRules">
+      <desktop2:FirewallRules Executable="AppleMobileDeviceLauncher.exe">
+        <desktop2:Rule Direction="in" IPProtocol="TCP" Profile="all" />
+        <desktop2:Rule Direction="in" IPProtocol="UDP" Profile="all" />
+      </desktop2:FirewallRules>
+    </desktop2:Extension>
+    <desktop2:Extension Category="windows.firewallRules">
+      <desktop2:FirewallRules Executable="AMPDevicesAgent.exe">
+        <desktop2:Rule Direction="in" IPProtocol="TCP" Profile="all" />
+        <desktop2:Rule Direction="in" IPProtocol="UDP" Profile="all" />
+      </desktop2:FirewallRules>
+    </desktop2:Extension>
+    <Extension Category="windows.publisherCacheFolders">
+      <PublisherCacheFolders>
+        <Folder Name="com.apple.MediaServices" />
+      </PublisherCacheFolders>
+    </Extension>
+    <Extension Category="windows.activatableClass.proxyStub">
+      <ProxyStub ClassId="F707A913-E0CE-4FD4-BCE3-425DD153285B">
+        <Path>AMPLibraryAgent.Proxies.dll</Path>
+        <Interface Name="IAMPLibrary" InterfaceId="F707A913-E0CE-4FD4-BCE3-425DD153285B" />
+        <Interface Name="IAMPMusicLibrary" InterfaceId="68E7097C-F969-4006-AAC3-95115F0ED1C4" />
+        <Interface Name="IAMPTVLibrary" InterfaceId="732B26C0-0C3C-47D1-A32A-40055B7B6897" />
+        <Interface Name="ActvityStateEventDelegate" InterfaceId="0A180672-967F-5B4E-9D67-8146D1200522" />
+        <Interface Name="BusyChangedEventDelegate" InterfaceId="6F89C3B3-0C25-50C5-BECA-3D5086210E34" />
+        <Interface Name="CloudLibraryEventDelegate" InterfaceId="C4C9DE7B-DE44-59DB-9805-54686C6DC298" />
+        <Interface Name="FetchInvalidationEventDelegate" InterfaceId="E9AE66D5-042E-5058-BEAA-1355425C739A" />
+        <Interface Name="LibraryEventDelegate" InterfaceId="7923015C-75C0-5732-86CC-AB09C471A674" />
+        <Interface Name="LibraryRevisionChangedEventDelegate" InterfaceId="E4712EB5-60A2-513D-B6E9-71C0ED973E52" />
+        <Interface Name="PlaybackEventDelegate" InterfaceId="F0E209BE-7FB1-5E1E-9879-B622AE7CCA41" />
+        <Interface Name="PlaybackEventWithCallbackDelegate" InterfaceId="C153DB3C-A412-5A70-A8F9-55EF31878EE3" />
+        <Interface Name="StoreServicesUIEventDelegate" InterfaceId="5B4F4F5D-5672-51F2-82DA-CD4C1BBFB42A" />
+      </ProxyStub>
+    </Extension>
+  </Extensions>
+  <build:Metadata>
+    <build:Item Name="Microsoft.Build.DesktopBridge.Tasks.dll" Version="17.4.33118.351" />
+    <build:Item Name="TargetFrameworkMoniker" Value=".NETFramework,Version=v4.5.1" />
+    <build:Item Name="VisualStudio" Version="17.0" />
+    <build:Item Name="OperatingSystem" Version="10.0.19041.1 (WinBuild.160101.0800)" />
+    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="17.4.33122.133" />
+    <build:Item Name="ProjectGUID" Value="a8b3102a-e29f-419e-a696-b0913e068b82" />
+    <build:Item Name="makepri.exe" Version="10.0.22621.1 (WinBuild.160101.0800)" />
+  </build:Metadata>
+  <mp:PhoneIdentity PhoneProductId="fc25fbff-a859-4cff-a327-14169e183467" PhonePublisherId="5e3e28d9-4e58-479c-870b-2e5f6ad1310e" />
+</Package>
