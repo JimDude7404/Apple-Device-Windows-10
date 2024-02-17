@@ -1,13 +1,68 @@
-# Apple Devices for Windows-10
-The Windows 11 Apple Devices preview app on Windows 10.
+# Orginal 
 
-# Issues
-The app just straight up does not work. This is NOT a Windows 10 issue. The app itself is just broken. All of the reviews also say so.
-![image](https://user-images.githubusercontent.com/67085206/224494640-04383b1c-2813-4d0b-9a56-497125392190.png)
+Please check the original Repo : [REPO](https://github.com/JimDude7404/Apple-Devices-Windows-10)
 
-# So what now?
-I will not be plushing a full release until the app is fully working. It is not worth my time in its current state. Thank you for the support :)
+I have rewrite it to correct it with my absolute not knowledge of Powershell (Google my best friends)
 
-# At least the app opens!
-![image](https://user-images.githubusercontent.com/67085206/224494722-1c4644e0-ee76-4f8a-99fa-856b92ffea57.png)
-Once Apple fixes this app I will update this GitHub with the fully working version. :)
+So now, it's work with every version of Apple Devices !
+
+# Requirement
+
+- Some Basic Knowledge about CLI
+- Have activate Developers option in Windows 
+
+# How that work ?
+
+## 1 - Clone the repo
+
+Clone the repo with your favorite browser or with Git
+
+```shell
+git clone https://github.com/MAG3845/Apple-Devices-Windows-10-Fix.git
+```
+![How to clone with browser](./Assets/git_clone.png)
+
+## 2 - Unzip
+
+Use your favorite unzipper, for me it's 7-Zip
+
+## 3 - Download the last Appx
+
+Go on [https://store.rg-adguard.net/](https://store.rg-adguard.net/)
+
+Select "ProductID" and enter : "9NP83LWLPZ9K"
+
+Download the last file with .msixbundle at this end
+![Download MSIXBundle](./Assets/download_appx.png)
+
+## 4 - Unzip and Past Apple Devices
+
+First, unzip our .MSIXBundle, use your favorite unzipper !
+
+![Unzip .MSIXBundle](./Assets/unzip_msixbundle.png)
+
+After that, you will need to go where your unzipper, unzip our .MSIXBundle and unzip .msix !
+
+![Unzip .msix](./Assets/unzip_appx.gif)
+
+## 5 - Copy and Past all content on our Folder
+
+So now, Copy all **content** (not the folder, the content in it) of our new Folder, and past it in "AppleDevices" folder of our Repos !
+
+![Copy and Past](./Assets/copy_paste.gif)
+
+## 6 - Run the script ! And use Apple Devices
+
+Run a Powershell with Admin Right !
+
+Go on our folder with ```cd```
+
+Run it with ```.\setup.ps1```
+
+# Informations
+
+I'm not a expert of Powershell, so my code is very unclean, and I knew it. 
+So you can make Pull Request, if you want you can PM on Discord : .mag. or by mail : contact@magcloud.eu
+Btw I'm to receive some tips about Powershell even if I prefer Bash !
+
+I decline all responsabilites of what my script do on your devices
